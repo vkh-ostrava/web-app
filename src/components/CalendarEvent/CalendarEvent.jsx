@@ -1,4 +1,6 @@
 import React from 'react'
+import { useMediaQuery } from 'react-responsive'
+
 import CalendarOctagon from './CalendarOctagon'
 import colors from '../../styles/colors'
 import {
@@ -52,24 +54,42 @@ export function CalendarEvent(props) {
   const talk = ['přednáška', 'přednášející', 'přednášky']
   const fun = ['zábavný program', 'bowling', 'hry', 'zábava', 'sranda']
   const pray = ['duchovní program', 'modlitba', 'adorace']
-
-  if (new RegExp(fun.join('|')).test(event.description.toLowerCase()))
+  if (event.description) {
+    if (new RegExp(fun.join('|')).test(event.description.toLowerCase()))
+      color = colors.EVENTS.FUN
+    if (new RegExp(talk.join('|')).test(event.description.toLowerCase()))
+      color = colors.EVENTS.TALK
+    if (new RegExp(pray.join('|')).test(event.description.toLowerCase()))
+      color = colors.EVENTS.PRAY
+  } else {
     color = colors.EVENTS.FUN
-  if (new RegExp(talk.join('|')).test(event.description.toLowerCase()))
-    color = colors.EVENTS.TALK
-  if (new RegExp(pray.join('|')).test(event.description.toLowerCase()))
-    color = colors.EVENTS.PRAY
+  }
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-device-width: 1224px)',
+  })
+
+  const octagonRatio = isDesktopOrLaptop ? 1.2 : 0.5
+
   return (
-    <Card reverse={props.reverse}>
-      <CalendarOctagon ratio={1.2} color={color.PRIMARY} type={color.DESC} />
-      <TextContainer color={color.LIGHT} key={event.id} reverse={props.reverse}>
+    <Card reverse={props.reverse} mobile={!isDesktopOrLaptop}>
+      <CalendarOctagon
+        ratio={octagonRatio}
+        color={color.PRIMARY}
+        type={color.DESC}
+      />
+      <TextContainer
+        color={color.LIGHT}
+        key={event.id}
+        reverse={props.reverse}
+        mobile={!isDesktopOrLaptop}
+      >
         <div>
           <Title color={color.PRIMARY}> {event.summary}</Title>
           <Time>{date} </Time>
           {event.description && <p> {event.description}</p>}
           {showLocation()}
         </div>
-        <SocialContainer reverse={props.reverse}>
+        <SocialContainer reverse={props.reverse} mobile={!isDesktopOrLaptop}>
           <CalendarIcon href={event.htmlLink} />
           {event.fb && <FacebookIcon href={event.fb} />}
         </SocialContainer>
