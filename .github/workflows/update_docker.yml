@@ -1,5 +1,8 @@
 name: update docker on WEB_SERVER
-on: [push]
+on:
+  push:
+    branches:    
+      - master  
 jobs:
 
   build:
