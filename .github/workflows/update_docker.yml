@@ -13,4 +13,6 @@ jobs:
         username: ${{ secrets.WEB_SERVER_USERNAME }}
         password: ${{ secrets.WEB_SERVER_PASSWORD }}
         port: ${{ secrets.WEB_SERVER_PORT }}
-        script: whoami
+        script: |
+          whoami 
+          ls -al
