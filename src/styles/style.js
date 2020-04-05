@@ -5,13 +5,16 @@ export const Paragraph = styled.p`
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
   text-align: justify;
-  font-size: 1.8rem;
-  line-height: 2.4rem;
+  ${({ mobile }) => (mobile ? `font-size: 1.0rem` : `font-size: 1.8rem`)}
+  ${({ mobile }) => (mobile ? `line-height: 1.5rem` : `line-height: 2.4rem`)}
+  ${({ mobile }) => (mobile ? `padding: '0px 10px'` : `padding: '0px 100px'`)}
+
+
 `
 
 export const H2 = styled.h2`
   font-family: 'Bebas Neue';
-  font-size: 8.5rem;
+  font-size: 6.3rem;
   margin: 2rem 0;
   font-style: normal;
   font-weight: normal;

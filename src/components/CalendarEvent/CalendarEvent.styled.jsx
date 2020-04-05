@@ -28,22 +28,30 @@ export const Card = styled.div`
       return 'row-reverse'
     }
   }};
-  margin-top: -20px;
+  margin-top: ${props => (props.mobile ? '10px' : '-20px')};
 `
 
 export const TextContainer = styled.div`
   display: flex;
-  flex-direction: ${props => (props.reverse ? 'row-reverse' : 'row')};
+  flex-direction: ${props =>
+    props.mobile ? 'column' : props.reverse ? 'row-reverse' : 'row'};
   width: 400px;
-  max-height: 200px;
+  max-height: 250px;
   padding: 20px;
-  margin: 0px -19px;
+  margin: 0px 0px 0px -19px;
   background-color: ${props => props.color};
   border-radius: ${props => (props.reverse ? '5px 0 0 5px' : '0 5px 5px 0')};
 `
 
 export const SocialContainer = styled.div`
   text-align: right;
-  margin: ${props => (props.reverse ? '0 auto 0 0 ' : '0 0 0 auto')};
+  margin: ${props =>
+    props.mobile ? '0 0 0 0' : props.reverse ? '0 auto 0 0 ' : '0 0 0 auto'};
   width: 40px;
+  display: flex;
+  flex-direction: ${props => (props.mobile ? 'row' : 'column')};
+
+  & > * {
+    padding: 2px;
+  }
 `
