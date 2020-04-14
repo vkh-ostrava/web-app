@@ -14,7 +14,9 @@ const SLink = styled(Link)`
   &:active {
     text-decoration: none;
   }
-
+  @media (max-device-width: 1224px) {
+    font-size: 12vw;
+  }
   color: ${colors.GREEN};
 `
 
@@ -79,6 +81,10 @@ export const NavItem = styled.div`
   text-transform: uppercase;
   color: black;
   align-self: flex-end;
+  @media (max-device-width: 1224px) {
+    padding: 5px 20px 0 0px;
+    text-align: right;
+  }
 `
 
 export const Switch = styled.label`

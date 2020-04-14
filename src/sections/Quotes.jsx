@@ -223,9 +223,13 @@ export default function Quotes() {
       )}
       {!isDesktopOrLaptop && (
         <>
-          <Container>{TEXTS.quotes[0]}</Container>
-          <Container>{TEXTS.quotes[1]}</Container>
-          <Container>{TEXTS.quotes[2]}</Container>
+          <Container>
+            <img
+              src="/images/quotes/mobile.png"
+              alt="quotes VKH"
+              width="100%"
+            />
+          </Container>
         </>
       )}
     </div>

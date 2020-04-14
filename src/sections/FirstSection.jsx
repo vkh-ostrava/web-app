@@ -12,6 +12,7 @@ export default function FirstSection() {
     query: '(min-device-width: 1224px)',
   })
 
+  const speed = isDesktopOrLaptop ? 2 : 0
   const logoWidth = isDesktopOrLaptop ? '600px' : '100%'
   return (
     <>
@@ -27,7 +28,7 @@ export default function FirstSection() {
               flex: 'auto',
             }}
           >
-            <Parallax speed={-2}>
+            <Parallax speed={speed}>
               <img src="logoVKH.png" width={logoWidth} alt="Logo VKH" />
               <H2>VKH OSTRAVA</H2>
               <H3>Vytěž ze sebe to nejlepší!</H3>
