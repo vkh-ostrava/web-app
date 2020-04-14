@@ -13,7 +13,7 @@ export default function About() {
     query: '(min-device-width: 1224px)',
   })
 
-  const paddingTop = isDesktopOrLaptop ? '250px' : '150px'
+  const paddingTop = isDesktopOrLaptop ? '150px' : '30px'
   return (
     <>
       {isDesktopOrLaptop && (
@@ -50,7 +50,7 @@ export default function About() {
         </Behind>
       )}
       {!isDesktopOrLaptop && (
-        <Container id="about" style={{ paddingTop: '150px' }}>
+        <Container id="about" style={{ paddingTop: paddingTop }}>
           <Paragraph mobile={!isDesktopOrLaptop}>{TEXT.aboutVKH}</Paragraph>
         </Container>
       )}

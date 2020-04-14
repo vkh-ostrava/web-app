@@ -4,21 +4,29 @@ import colors from './colors'
 export const Paragraph = styled.p`
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
+
   text-align: justify;
-  ${({ mobile }) => (mobile ? `font-size: 1.0rem` : `font-size: 1.8rem`)}
+  ${({ mobile }) => (mobile ? `font-size: 1.2rem` : `font-size: 1.8rem`)}
   ${({ mobile }) => (mobile ? `line-height: 1.5rem` : `line-height: 2.4rem`)}
-  ${({ mobile }) => (mobile ? `padding: '0px 10px'` : `padding: '0px 100px'`)}
+  ${({ mobile }) => (mobile ? `padding: 0px 20px` : `padding: 0px 100px`)}
 
 
 `
 
 export const H2 = styled.h2`
   font-family: 'Bebas Neue';
-  font-size: 6.3rem;
+  font-size: 8.3rem;
   margin: 2rem 0;
   font-style: normal;
   font-weight: normal;
   text-transform: uppercase;
+  @media only screen and (max-width: 768px) {
+    font-size: 6.3rem;
+    background-image: url('/images/bg/bg10.png');
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
 `
 
 export const H3 = styled.h3`
@@ -134,6 +142,10 @@ export const Container = styled.div`
     width: 95%;
     margin: 0 auto;
     align-self: center;
+    background-image: url('/images/bg/container01.png');
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
   }
 `
 export const Blockquote = styled.blockquote`

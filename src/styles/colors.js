@@ -7,7 +7,7 @@ export default {
   DARK_GREEN: '#004853',
   GREEN: '#007E80',
   LIGHT_GREEN: '#00B9BD',
-  BG_DARK: '#026670',
+  BG_DARK: '#004853',
   BG_LIGHT: '',
   LIGHT_GRAY100: '#EDEDED',
   LIGHT_GRAY200: '#dbdbdb',
