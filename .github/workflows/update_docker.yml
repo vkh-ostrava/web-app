@@ -17,5 +17,7 @@ jobs:
         password: ${{ secrets.WEB_SERVER_PASSWORD }}
         port: ${{ secrets.WEB_SERVER_PORT }}
         script: |
-          whoami 
-          ls -al
+          cd webapp 
+          git pull
+          yarn build
+          docker-compose -f docker-compose-prod.yml up -d --build --force-recreate
