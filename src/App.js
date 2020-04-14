@@ -19,7 +19,7 @@ function App() {
     const fetchData = async () => {
       //TODO change URL for something better
       const result = await axios(
-        `http://46.36.40.177:88/wp-json/menus/v1/menus/2`
+        `https://administrace.vkhostrava.cz/wp-json/menus/v1/menus/2`
       )
       result.data.forEach(({ object_id, title, url }) => {
         const link = url.split('/')

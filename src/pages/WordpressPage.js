@@ -10,7 +10,7 @@ export default function WordpressPage(props) {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `http://46.36.40.177:88/wp-json/wp/v2/pages/${props.id}`
+        `https://administrace.vkhostrava.cz/wp-json/wp/v2/pages/${props.id}`
       )
       setTitle(result.data.title.rendered)
       setPagePost(result.data.content.rendered)
