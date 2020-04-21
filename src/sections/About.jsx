@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Parallax from 'react-rellax'
 import { useMediaQuery } from 'react-responsive'
 
