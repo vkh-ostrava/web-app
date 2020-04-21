@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
-import { Switch, Route, HashRouter } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import Footer from './sections/Footer'
 import FirstSection from './sections/FirstSection'
@@ -33,27 +33,25 @@ function App() {
   }, [])
 
   return (
-    <HashRouter>
-      <div className="App">
-        <Navbar wordpressMenu={menu} />
+    <div className="App">
+      <Navbar wordpressMenu={menu} />
 
-        <Switch>
-          {menu.map(({ id, path }) => (
-            <Route path={path} key={id}>
-              <WordpressPage id={id} />
-            </Route>
-          ))}
-          <Route path="/">
-            <FirstSection />
-            <About />
-            <Quotes />
-            <Calendar />
-            <Instagram />
-            <Footer />
+      <Switch>
+        {menu.map(({ id, path }) => (
+          <Route path={path} key={id}>
+            <WordpressPage id={id} />
           </Route>
-        </Switch>
-      </div>
-    </HashRouter>
+        ))}
+        <Route path="/">
+          <FirstSection />
+          <About />
+          <Quotes />
+          <Calendar />
+          <Instagram />
+          <Footer />
+        </Route>
+      </Switch>
+    </div>
   )
 }
 
