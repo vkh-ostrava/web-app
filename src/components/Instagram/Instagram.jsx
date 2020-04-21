@@ -5,15 +5,15 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+import { Image, ImageWrapper } from './Instagram.styled'
 import {
   H2,
   LightSection,
   Cell,
   Container,
-  Image,
   Column,
   Row,
-} from '../styles/style'
+} from '../../styles/style'
 
 export default function Instagram() {
   const [photos, setPhotos] = useState([])
@@ -50,12 +50,20 @@ export default function Instagram() {
   }, [])
 
   const getGrid = () => {
+    console.log(photos[0])
     return (
       <Row>
         {photos.map(photo => {
           return (
             <Column xs={12} md={6} lg={3} key={photo.url}>
-              <Image src={photo.displayUrl} />
+              <ImageWrapper>
+                <Image src={photo.displayUrl} />
+                <div>
+                  <a href={photo.url} target="_blank" rel="noopener noreferrer">
+                    {photo.caption}
+                  </a>
+                </div>
+              </ImageWrapper>
             </Column>
           )
         })}

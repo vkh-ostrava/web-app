@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, HashRouter } from 'react-router-dom'
 
 import Footer from './sections/Footer'
 import FirstSection from './sections/FirstSection'
 import About from './sections/About'
 import Quotes from './sections/Quotes'
-import Instagram from './sections/Instagram'
+import Instagram from './components/Instagram/Instagram'
 import WordpressPage from './pages/WordpressPage'
 import { Navbar } from './components/NavBar/Navbar'
 import { Calendar } from './components/Calendar'
@@ -33,24 +33,27 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <Navbar wordpressMenu={menu} />
-      <Switch>
-        {menu.map(({ id, path }) => (
-          <Route path={path} key={id}>
-            <WordpressPage id={id} />
+    <HashRouter>
+      <div className="App">
+        <Navbar wordpressMenu={menu} />
+
+        <Switch>
+          {menu.map(({ id, path }) => (
+            <Route path={path} key={id}>
+              <WordpressPage id={id} />
+            </Route>
+          ))}
+          <Route path="/">
+            <FirstSection />
+            <About />
+            <Quotes />
+            <Calendar />
+            <Instagram />
+            <Footer />
           </Route>
-        ))}
-        <Route path="/">
-          <FirstSection />
-          <About />
-          <Quotes />
-          <Calendar />
-          <Instagram />
-          <Footer />
-        </Route>
-      </Switch>
-    </div>
+        </Switch>
+      </div>
+    </HashRouter>
   )
 }
 
