@@ -39,6 +39,7 @@ export const TextContainer = styled.div`
   max-height: 250px;
   padding: 20px;
   margin: 0px 0px 0px -19px;
+  margin: ${props => (props.reverse ? '0 -39px 0 39px' : '')};
   background-color: ${props => props.color};
   border-radius: ${props => (props.reverse ? '5px 0 0 5px' : '0 5px 5px 0')};
 `
