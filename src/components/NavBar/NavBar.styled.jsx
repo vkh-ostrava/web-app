@@ -19,6 +19,26 @@ const SLink = styled(Link)`
   }
   color: ${colors.GREEN};
 `
+export const ExternalLink = styled.a`
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+  @media (max-device-width: 1224px) {
+    font-size: 12vw;
+  }
+  color: ${colors.GREEN};
+
+  img {
+    padding: 0 0 0 15px;
+    vertical-align: middle;
+  }
+`
 
 export const StyledLink = props => <SLink {...props} />
 
@@ -65,6 +85,7 @@ export const NavigationPanel = styled.div`
   background-color: white;
   position: fixed;
   right: 0;
+  top: 0;
   z-index: 999;
   flex-direction: column;
   display: flex;

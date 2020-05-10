@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Hamburger } from './Hamburger'
 import { CancelIcon } from '../icons/CancelIcon'
-import { NavItem, NavigationPanel, Switch, StyledLink } from './NavBar.styled'
+import {
+  NavItem,
+  NavigationPanel,
+  Switch,
+  StyledLink,
+  ExternalLink,
+} from './NavBar.styled'
 
 export function Navbar(props) {
   const [openedMenu, setOpenedMenu] = useState(false)
@@ -54,8 +60,6 @@ export function Navbar(props) {
             </StyledLink>
           </NavItem>
         ))}
-        <NavItem>Kalendář</NavItem>
-        <NavItem>FOTOGALERIE</NavItem>
         <NavItem>
           <StyledLink
             to="/duchovni-program-v-ostrave"
@@ -63,6 +67,44 @@ export function Navbar(props) {
           >
             DUCHOVNÍ ŽIVOT V OSTRAVĚ
           </StyledLink>
+        </NavItem>
+        <NavItem>
+          <StyledLink to="/kontakt" onClick={() => setOpenedMenu(false)}>
+            KONTAKT
+          </StyledLink>
+        </NavItem>
+        <NavItem>
+          <StyledLink to="/vkh-v-cr" onClick={() => setOpenedMenu(false)}>
+            VKH V ČR
+          </StyledLink>
+        </NavItem>
+        <NavItem>
+          <ExternalLink
+            href="https://calendar.google.com/calendar/embed?src=vkhostrava.cz_o4gjrck3s2cnq03guci1hlb06c%40group.calendar.google.com&ctz=Europe%2FPrague&mode=AGENDA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Kalendář
+            <img
+              src="/images/icons/external-link.svg"
+              alt="external"
+              width="20px"
+            />
+          </ExternalLink>
+        </NavItem>
+        <NavItem>
+          <ExternalLink
+            href="https://www.zonerama.com/VKHOstrava"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            FOTOGALERIE
+            <img
+              src="/images/icons/external-link.svg"
+              alt="external"
+              width="20px"
+            />
+          </ExternalLink>
         </NavItem>
       </NavigationPanel>
       <div
