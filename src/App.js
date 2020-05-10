@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
 
 import Footer from './sections/Footer'
 import FirstSection from './sections/FirstSection'
@@ -17,6 +17,11 @@ import VkhCr from './pages/VKHCR'
 
 function App() {
   const [menu, setMenu] = useState([])
+  let location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [location])
 
   useEffect(() => {
     const fetchData = async () => {

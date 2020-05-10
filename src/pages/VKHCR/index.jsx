@@ -3,6 +3,7 @@ import { useMediaQuery } from 'react-responsive'
 
 import { Container, Paragraph, H2, Column, Row, H3 } from '../../styles/style'
 import { Link } from './styles'
+import Footer from '../../sections/Footer'
 const vkhs = [
   {
     name: 'VKH České Budějovice',
@@ -99,6 +100,7 @@ const VkhCr = () => {
           <Row>{showVKHs()}</Row>
         </Container>
       </Container>
+      <Footer />
     </div>
   )
 }

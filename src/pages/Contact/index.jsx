@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { compose, withProps } from 'recompose'
 import {
   withScriptjs,
@@ -9,6 +9,7 @@ import {
 import { useMediaQuery } from 'react-responsive'
 
 import { Container, Paragraph, H2, Column, Row } from '../../styles/style'
+import Footer from '../../sections/Footer'
 
 const MyMapComponent = compose(
   withProps({
@@ -108,6 +109,7 @@ const Contact = () => {
         <img src="images/bg/contact.svg" width={bg} alt="Ilustration" />
       </Container>
       <MyMapComponent isMarkerShown />
+      <Footer />
     </>
   )
 }

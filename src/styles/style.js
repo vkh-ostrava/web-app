@@ -59,6 +59,7 @@ export const LightSection = styled.div`
 
 export const DarkSection = styled.div`
   ${Section}
+  margin-top: 20px;
   ${({ bg }) =>
     bg ? `background-color:${bg}` : `background-color:${colors.BG_DARK}`};
   color: white;

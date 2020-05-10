@@ -10,6 +10,7 @@ import {
   Paragraph,
   OutedButton,
 } from '../styles/style'
+import Footer from '../sections/Footer'
 
 export default function ProgramInOstrava() {
   const organizations = [
@@ -94,9 +95,12 @@ export default function ProgramInOstrava() {
   }
 
   return (
-    <Container>
-      <H2>DUCHOVNÍ PROGRAM V OSTRAVĚ</H2>
-      {isDesktopOrLaptop ? showDesktop() : showMobile()}
-    </Container>
+    <>
+      <Container>
+        <H2>DUCHOVNÍ PROGRAM V OSTRAVĚ</H2>
+        {isDesktopOrLaptop ? showDesktop() : showMobile()}
+      </Container>
+      <Footer />
+    </>
   )
 }
