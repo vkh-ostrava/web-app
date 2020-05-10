@@ -179,3 +179,49 @@ export const Blockquote = styled.blockquote`
     right: 10px;
   }
 `
+
+export const Button = styled.a`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  background-color: ${colors.DARK_GREEN};
+  border-radius: 4px;
+  border: 1px solid #4b8f29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 12px;
+  text-shadow: 0px 1px 0px #5b8a3c;
+  transition: ease 0.4s;
+  margin: 15px 0;
+  &:hover {
+    background-color: ${colors.LIGHT_GREEN};
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+`
+
+export const OutedButton = styled.a`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  border: 1px solid ${colors.LIGHT_GREEN};
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: ${colors.LIGHT_GREEN};
+  padding: 8px 12px;
+  transition: ease 0.4s;
+  margin: 15px 0;
+  &:hover {
+    color: ${colors.LIGHT_GREEN};
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+`

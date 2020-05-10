@@ -56,6 +56,14 @@ export function Navbar(props) {
         ))}
         <NavItem>Kalendář</NavItem>
         <NavItem>FOTOGALERIE</NavItem>
+        <NavItem>
+          <StyledLink
+            to="/duchovni-program-v-ostrave"
+            onClick={() => setOpenedMenu(false)}
+          >
+            DUCHOVNÍ ŽIVOT V OSTRAVĚ
+          </StyledLink>
+        </NavItem>
       </NavigationPanel>
       <div
         className="sidenav-overlay"

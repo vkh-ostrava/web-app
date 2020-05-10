@@ -11,6 +11,7 @@ import Instagram from './components/Instagram/Instagram'
 import WordpressPage from './pages/WordpressPage'
 import { Navbar } from './components/NavBar/Navbar'
 import { Calendar } from './components/Calendar'
+import ProgramInOstrava from './pages/ProgramInOstrava'
 
 function App() {
   const [menu, setMenu] = useState([])
@@ -42,6 +43,9 @@ function App() {
             <WordpressPage id={id} />
           </Route>
         ))}
+        <Route path="/duchovni-program-v-ostrave">
+          <ProgramInOstrava />
+        </Route>
         <Route path="/">
           <FirstSection />
           <About />
