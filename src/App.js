@@ -13,6 +13,7 @@ import { Navbar } from './components/NavBar/Navbar'
 import { Calendar } from './components/Calendar'
 import ProgramInOstrava from './pages/ProgramInOstrava'
 import Contact from './pages/Contact'
+import VkhCr from './pages/VKHCR'
 
 function App() {
   const [menu, setMenu] = useState([])
@@ -44,6 +45,9 @@ function App() {
         </Route>
         <Route path="/duchovni-program-v-ostrave">
           <ProgramInOstrava />
+        </Route>
+        <Route path="/vkh-v-cr">
+          <VkhCr />
         </Route>
         {menu.map(({ id, path }) => (
           <Route path={path} key={id}>
