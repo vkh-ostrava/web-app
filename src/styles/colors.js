@@ -8,7 +8,7 @@ export default {
   GREEN: '#007E80',
   LIGHT_GREEN: '#00B9BD',
   BG_DARK: '#004853',
-  BG_LIGHT: '',
+  BG_LIGHT: '#e8e8e8',
   LIGHT_GRAY100: '#EDEDED',
   LIGHT_GRAY200: '#dbdbdb',
   TEXT_HIGHTLIGHTED: '#16ffbd',

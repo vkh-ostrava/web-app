@@ -1,7 +1,9 @@
 import React from 'react'
 import { StyledHamburger } from './NavBar.styled'
 import colors from '../../styles/colors'
+
 export const Hamburger = props => {
+  const color = props.theme === 'light' ? colors.BG_DARK : colors.BG_LIGHT
   return (
     <StyledHamburger>
       <svg
@@ -12,25 +14,20 @@ export const Hamburger = props => {
         viewBox="0 0 50 36"
       >
         <g>
-          <rect
-            id="loading-bar-left"
-            width="45"
-            height="7"
-            fill={colors.BG_DARK}
-          />
+          <rect id="loading-bar-left" width="45" height="7" fill={color} />
           <rect
             id="loading-bar-middle"
             width="45"
             height="7"
             y="14"
-            fill={colors.BG_DARK}
+            fill={color}
           />
           <rect
             id="loading-bar-right"
             width="45"
             height="7"
             y="28"
-            fill={colors.BG_DARK}
+            fill={color}
           />
         </g>
       </svg>

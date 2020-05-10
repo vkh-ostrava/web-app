@@ -1,6 +1,12 @@
 import styled, { css } from 'styled-components'
 import colors from './colors'
 
+export const StyledApp = styled.div`
+  text-align: center;
+  background: ${props => (props.theme.theme === 'light' ? 'white' : 'black')};
+  color: ${props => (props.theme.theme === 'light' ? 'black' : '#e8e8e8')};
+`
+
 export const Paragraph = styled.div`
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;

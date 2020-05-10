@@ -1,6 +1,8 @@
 import React from 'react'
 import Parallax from 'react-rellax'
 import { useMediaQuery } from 'react-responsive'
+import { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
 
 import { H2, Paragraph, Behind, Infront, Container } from '../styles/style'
 import TEXT from '../constants/texts'
@@ -14,12 +16,20 @@ export default function About() {
   })
 
   const paddingTop = isDesktopOrLaptop ? '150px' : '30px'
+  const themeContext = useContext(ThemeContext)
+
   return (
     <>
       {isDesktopOrLaptop && (
         <Behind style={{ paddingTop: '300px' }}>
           <Parallax style={{ position: 'absolute' }} speed={1}>
-            <OctagonLeft background={colors.LIGHT_GREEN} />
+            <OctagonLeft
+              background={
+                themeContext.theme === 'light'
+                  ? colors.LIGHT_GREEN
+                  : colors.DARK_GREEN
+              }
+            />
           </Parallax>
           <OctagonLeft background={colors.RED} />
           <OctagonParallax

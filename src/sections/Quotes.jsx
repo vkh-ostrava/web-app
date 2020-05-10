@@ -32,7 +32,7 @@ export default function Quotes() {
             left="1300px"
             top="900px"
             ratio={1.3}
-            zIndex={-1}
+            zIndex={9}
             speed={2.4}
             color={colors.ORANGE}
           />
@@ -40,7 +40,7 @@ export default function Quotes() {
             left="461px"
             top="1415px"
             ratio={3.5}
-            zIndex={-1}
+            zIndex={9}
             speed={3}
             color={colors.DARK_GREEN}
           />
@@ -48,7 +48,7 @@ export default function Quotes() {
             left="750px"
             top="1250px"
             ratio={3.5}
-            zIndex={-3}
+            zIndex={7}
             speed={3}
             color={colors.ORANGE}
           />
@@ -56,7 +56,7 @@ export default function Quotes() {
             left="1050px"
             top="1000px"
             ratio={2}
-            zIndex={1}
+            zIndex={11}
             speed={3}
             color={colors.LIGHT_GRAY200}
             opacity={0.5}
@@ -65,7 +65,7 @@ export default function Quotes() {
             left="950px"
             top="1200px"
             ratio={2}
-            zIndex={1}
+            zIndex={11}
             speed={3}
             color={colors.LIGHT_GRAY200}
             opacity={0.5}
@@ -74,7 +74,7 @@ export default function Quotes() {
             left="430px"
             top="1400px"
             ratio={2}
-            zIndex={1}
+            zIndex={11}
             speed={4}
             color={colors.LIGHT_GRAY200}
             opacity={0.7}
@@ -83,7 +83,7 @@ export default function Quotes() {
             left="350px"
             top="1650px"
             ratio={2}
-            zIndex={1}
+            zIndex={11}
             speed={4}
             color={colors.LIGHT_GRAY200}
             opacity={0.4}
@@ -92,7 +92,7 @@ export default function Quotes() {
             left="500px"
             top="2200px"
             ratio={2}
-            zIndex={1}
+            zIndex={11}
             speed={5}
             color={colors.LIGHT_GRAY200}
             opacity={0.3}
@@ -101,7 +101,7 @@ export default function Quotes() {
             left="1200px"
             top="2250px"
             ratio={2}
-            zIndex={1}
+            zIndex={11}
             speed={5}
             color={colors.LIGHT_GRAY200}
             opacity={0.3}
@@ -110,7 +110,7 @@ export default function Quotes() {
             left="1120px"
             top="2460px"
             ratio={2}
-            zIndex={7}
+            zIndex={17}
             speed={5}
             color={colors.LIGHT_GRAY200}
             opacity={0.3}
@@ -119,7 +119,7 @@ export default function Quotes() {
             left="1200px"
             top="2800px"
             ratio={2}
-            zIndex={1}
+            zIndex={11}
             speed={6}
             color={colors.LIGHT_GRAY200}
             opacity={0.3}
@@ -128,7 +128,7 @@ export default function Quotes() {
             left="920px"
             top="2850px"
             ratio={1.3}
-            zIndex={-3}
+            zIndex={7}
             speed={6}
             color={colors.RED}
           />
@@ -136,7 +136,7 @@ export default function Quotes() {
             left="951px"
             top="1660px"
             ratio={5}
-            zIndex={2}
+            zIndex={8}
             speed={3}
             color={colors.ORANGE}
           />
@@ -144,7 +144,7 @@ export default function Quotes() {
             left="980px"
             top="700px"
             ratio={2}
-            zIndex={2}
+            zIndex={12}
             speed={2}
             color={colors.DARK_GREEN}
           />
@@ -153,7 +153,7 @@ export default function Quotes() {
             top="2115px"
             ratio={1.5}
             speed={4}
-            zIndex={-2}
+            zIndex={8}
             color={colors.RED}
           />
           <BorderOctagon
@@ -161,14 +161,14 @@ export default function Quotes() {
             top="2100px"
             ratio={2.5}
             speed={4}
-            zIndex={-2}
+            zIndex={8}
             color={colors.GREEN}
           />
           <BorderOctagon
             left="650px"
             top="700px"
             ratio={3.5}
-            zIndex={6}
+            zIndex={16}
             speed={2}
             color={colors.LIGHT_GREEN}
           />
@@ -176,7 +176,7 @@ export default function Quotes() {
             left="450px"
             top="450px"
             ratio={4.5}
-            zIndex={9}
+            zIndex={19}
             speed={2}
             color={colors.DARK_GREEN}
           />
@@ -184,39 +184,75 @@ export default function Quotes() {
             left="751px"
             top="146px"
             ratio={4}
-            zIndex={-5}
+            zIndex={5}
             color={colors.RED}
           />
           <NormalOctogen
             left="1050px"
             top="1000px"
             ratio={3}
-            zIndex={2}
+            zIndex={12}
             speed={1}
             color={colors.LIGHT_GREEN}
           />
           <img
-            style={{ position: 'absolute', left: '1100px', top: '358px' }}
+            style={{
+              position: 'absolute',
+              left: '1100px',
+              top: '358px',
+              zIndex: 10,
+            }}
             src="images/quotes/top.png"
             alt="top quote"
           />
           <img
-            style={{ position: 'absolute', left: '790px', top: '535px' }}
+            style={{
+              position: 'absolute',
+              left: '790px',
+              top: '535px',
+              zIndex: 10,
+            }}
             src="images/quotes/mid.png"
             alt="mid quote"
           />
           <img
-            style={{ position: 'absolute', left: '810px', top: '850px' }}
+            style={{
+              position: 'absolute',
+              left: '810px',
+              top: '850px',
+              zIndex: 10,
+            }}
             src="images/quotes/down.png"
             alt="down quote"
           />
-          <Quote style={{ position: 'absolute', left: '217px', top: '518px' }}>
+          <Quote
+            style={{
+              position: 'absolute',
+              left: '217px',
+              top: '518px',
+              zIndex: 10,
+            }}
+          >
             {TEXTS.quotes[0]}
           </Quote>
-          <Quote style={{ position: 'absolute', left: '1365px', top: '305px' }}>
+          <Quote
+            style={{
+              position: 'absolute',
+              left: '1365px',
+              top: '305px',
+              zIndex: 10,
+            }}
+          >
             {TEXTS.quotes[1]}
           </Quote>
-          <Quote style={{ position: 'absolute', left: '1055px', top: '648px' }}>
+          <Quote
+            style={{
+              position: 'absolute',
+              left: '1055px',
+              top: '648px',
+              zIndex: 10,
+            }}
+          >
             {TEXTS.quotes[2]}
           </Quote>
         </Behind>

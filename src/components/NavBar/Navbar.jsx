@@ -1,39 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+
 import { Hamburger } from './Hamburger'
 import { CancelIcon } from '../icons/CancelIcon'
 import {
   NavItem,
   NavigationPanel,
-  Switch,
   StyledLink,
   ExternalLink,
 } from './NavBar.styled'
 
 export function Navbar(props) {
   const [openedMenu, setOpenedMenu] = useState(false)
-  const [darkTheme, setDarkTheme] = useState(false)
-
-  useEffect(() => {
-    if (darkTheme) {
-      document.body.style.backgroundColor = 'black'
-      document.body.style.color = 'gray'
-    } else {
-      document.body.style.backgroundColor = 'white'
-      document.body.style.color = 'black'
-    }
-  })
-
+  const themeContext = useContext(ThemeContext)
   return (
     <>
       <div className="omg">
         <div onClick={() => setOpenedMenu(true)}>
-          <Hamburger />
+          <Hamburger theme={themeContext.theme} />
         </div>
-
-        <Switch>
-          <input type="checkbox" onClick={() => setDarkTheme(!darkTheme)} />
-          <div className="switch"></div>
-        </Switch>
       </div>
       <NavigationPanel
         style={{
@@ -46,7 +32,7 @@ export function Navbar(props) {
           style={{ padding: '20px 20px 0 0', textAlign: 'right' }}
           onClick={() => setOpenedMenu(false)}
         >
-          <CancelIcon />
+          <CancelIcon theme={themeContext.theme} />
         </div>
         <NavItem>
           <StyledLink to="/" onClick={() => setOpenedMenu(false)}>

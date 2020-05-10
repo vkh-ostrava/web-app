@@ -43,7 +43,8 @@ export const ExternalLink = styled.a`
 export const StyledLink = props => <SLink {...props} />
 
 export const StyledHamburger = styled.div`
-  color: ${colors.BG_DARK};
+  color: ${props =>
+    props.theme.theme === 'light' ? colors.BG_DARK : colors.BG_LIGHT};
   position: fixed;
   right: 20px;
   top: 20px;
@@ -82,7 +83,7 @@ export const StyledHamburger = styled.div`
 
 export const NavigationPanel = styled.div`
   height: 100%;
-  background-color: white;
+  background: ${props => (props.theme.theme === 'light' ? 'white' : '#141414')};
   position: fixed;
   right: 0;
   top: 0;
