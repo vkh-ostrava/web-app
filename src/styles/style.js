@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import colors from './colors'
 
-export const Paragraph = styled.p`
+export const Paragraph = styled.div`
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
 
@@ -9,8 +9,6 @@ export const Paragraph = styled.p`
   ${({ mobile }) => (mobile ? `font-size: 1.2rem` : `font-size: 1.8rem`)}
   ${({ mobile }) => (mobile ? `line-height: 1.5rem` : `line-height: 2.4rem`)}
   ${({ mobile }) => (mobile ? `padding: 0px 20px` : `padding: 0px 100px`)}
-
-
 `
 
 export const H2 = styled.h2`

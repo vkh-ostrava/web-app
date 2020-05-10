@@ -12,6 +12,7 @@ import WordpressPage from './pages/WordpressPage'
 import { Navbar } from './components/NavBar/Navbar'
 import { Calendar } from './components/Calendar'
 import ProgramInOstrava from './pages/ProgramInOstrava'
+import Contact from './pages/Contact'
 
 function App() {
   const [menu, setMenu] = useState([])
@@ -38,14 +39,17 @@ function App() {
       <Navbar wordpressMenu={menu} />
 
       <Switch>
+        <Route path="/kontakt">
+          <Contact />
+        </Route>
+        <Route path="/duchovni-program-v-ostrave">
+          <ProgramInOstrava />
+        </Route>
         {menu.map(({ id, path }) => (
           <Route path={path} key={id}>
             <WordpressPage id={id} />
           </Route>
         ))}
-        <Route path="/duchovni-program-v-ostrave">
-          <ProgramInOstrava />
-        </Route>
         <Route path="/">
           <FirstSection />
           <About />
