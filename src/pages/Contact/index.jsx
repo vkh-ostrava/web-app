@@ -8,8 +8,7 @@ import {
 } from 'react-google-maps'
 import { useMediaQuery } from 'react-responsive'
 
-import { Container } from './styles'
-import { Paragraph, H2, Column, Row } from '../../styles/style'
+import { Container, Paragraph, H2, Column, Row } from '../../styles/style'
 
 const MyMapComponent = compose(
   withProps({
