@@ -6,14 +6,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import { Image, ImageWrapper } from './Instagram.styled'
-import {
-  H2,
-  LightSection,
-  Cell,
-  Container,
-  Column,
-  Row,
-} from '../../styles/style'
+import { H2, Cell, Container, Column, Row } from '../../styles/style'
 
 export default function Instagram() {
   const [photos, setPhotos] = useState([])
@@ -118,11 +111,9 @@ export default function Instagram() {
     ],
   }
   return (
-    <LightSection>
-      <Container>
-        <H2>Instagram</H2>
-        {isDesktopOrLaptop ? getGrid() : getSlider()}
-      </Container>
-    </LightSection>
+    <Container style={{ padding: '2rem 0' }}>
+      <H2>Instagram</H2>
+      {isDesktopOrLaptop ? getGrid() : getSlider()}
+    </Container>
   )
 }
