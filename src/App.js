@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import MetaTags from 'react-meta-tags'
 
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
@@ -19,7 +18,6 @@ import VkhCr from './pages/VKHCR'
 
 import './App.css'
 import { StyledApp } from './styles/style'
-import colors from './styles/colors'
 
 function App() {
   const [menu, setMenu] = useState([])
@@ -86,17 +84,6 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <MetaTags>
-        <meta name="theme-color" content={colors.DARK_GREEN} />
-        <meta
-          name="msapplication-navbutton-color"
-          content={colors.DARK_GREEN}
-        />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content={colors.DARK_GREEN}
-        />
-      </MetaTags>
       <StyledApp>
         <Navbar wordpressMenu={menu} />
 
