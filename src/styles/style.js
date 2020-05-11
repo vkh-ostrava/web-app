@@ -3,7 +3,7 @@ import colors from './colors'
 
 export const StyledApp = styled.div`
   text-align: center;
-  background: ${props => (props.theme.theme === 'light' ? 'white' : 'black')};
+  background: ${props => (props.theme.theme === 'light' ? 'white' : '#1c1c1c')};
   color: ${props => (props.theme.theme === 'light' ? 'black' : '#e8e8e8')};
 `
 
