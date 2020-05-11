@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import './App.css'
+import MetaTags from 'react-meta-tags'
+
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
@@ -16,7 +17,9 @@ import ProgramInOstrava from './pages/ProgramInOstrava'
 import Contact from './pages/Contact'
 import VkhCr from './pages/VKHCR'
 
+import './App.css'
 import { StyledApp } from './styles/style'
+import colors from './styles/colors'
 
 function App() {
   const [menu, setMenu] = useState([])
@@ -63,7 +66,7 @@ function App() {
     )
     sunset.setMinutes(sunset.getMinutes() - now.getTimezoneOffset())
     sunrise.setMinutes(sunset.getMinutes() - now.getTimezoneOffset())
-    //now.setMinutes(now.getMinutes() + 600);
+    now.setMinutes(now.getMinutes() + 600)
     const timeToSunset =
       sunset.getHours() * 60 +
       sunset.getMinutes() -
@@ -83,6 +86,17 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <MetaTags>
+        <meta name="theme-color" content={colors.DARK_GREEN} />
+        <meta
+          name="msapplication-navbutton-color"
+          content={colors.DARK_GREEN}
+        />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content={colors.DARK_GREEN}
+        />
+      </MetaTags>
       <StyledApp>
         <Navbar wordpressMenu={menu} />
 
