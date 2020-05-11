@@ -43,7 +43,6 @@ export default function Instagram() {
   }, [])
 
   const getGrid = () => {
-    console.log(photos[0])
     return (
       <Row>
         {photos.map(photo => {

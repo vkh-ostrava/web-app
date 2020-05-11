@@ -66,7 +66,7 @@ function App() {
     )
     sunset.setMinutes(sunset.getMinutes() - now.getTimezoneOffset())
     sunrise.setMinutes(sunset.getMinutes() - now.getTimezoneOffset())
-    now.setMinutes(now.getMinutes() + 600)
+    //now.setMinutes(now.getMinutes() + 600)
     const timeToSunset =
       sunset.getHours() * 60 +
       sunset.getMinutes() -
