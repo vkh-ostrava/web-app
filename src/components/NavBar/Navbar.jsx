@@ -39,31 +39,6 @@ export function Navbar(props) {
             Domů
           </StyledLink>
         </NavItem>
-        {props.wordpressMenu.map(({ id, path, title }) => (
-          <NavItem key={id}>
-            <StyledLink to={path} onClick={() => setOpenedMenu(false)}>
-              {title}
-            </StyledLink>
-          </NavItem>
-        ))}
-        <NavItem>
-          <StyledLink
-            to="/duchovni-program-v-ostrave"
-            onClick={() => setOpenedMenu(false)}
-          >
-            DUCHOVNÍ ŽIVOT V OSTRAVĚ
-          </StyledLink>
-        </NavItem>
-        <NavItem>
-          <StyledLink to="/kontakt" onClick={() => setOpenedMenu(false)}>
-            KONTAKT
-          </StyledLink>
-        </NavItem>
-        <NavItem>
-          <StyledLink to="/vkh-v-cr" onClick={() => setOpenedMenu(false)}>
-            VKH V ČR
-          </StyledLink>
-        </NavItem>
         <NavItem>
           <ExternalLink
             href="https://calendar.google.com/calendar/embed?src=vkhostrava.cz_o4gjrck3s2cnq03guci1hlb06c%40group.calendar.google.com&ctz=Europe%2FPrague&mode=AGENDA"
@@ -91,6 +66,31 @@ export function Navbar(props) {
               width="20px"
             />
           </ExternalLink>
+        </NavItem>
+        {props.wordpressMenu.map(({ id, path, title }) => (
+          <NavItem key={id}>
+            <StyledLink to={path} onClick={() => setOpenedMenu(false)}>
+              {title}
+            </StyledLink>
+          </NavItem>
+        ))}
+        <NavItem>
+          <StyledLink
+            to="/duchovni-program-v-ostrave"
+            onClick={() => setOpenedMenu(false)}
+          >
+            DUCHOVNÍ ŽIVOT V OSTRAVĚ
+          </StyledLink>
+        </NavItem>
+        <NavItem>
+          <StyledLink to="/vkh-v-cr" onClick={() => setOpenedMenu(false)}>
+            VKH V ČR
+          </StyledLink>
+        </NavItem>
+        <NavItem>
+          <StyledLink to="/kontakt" onClick={() => setOpenedMenu(false)}>
+            KONTAKT
+          </StyledLink>
         </NavItem>
       </NavigationPanel>
       <div
