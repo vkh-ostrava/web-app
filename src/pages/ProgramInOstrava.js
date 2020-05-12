@@ -97,7 +97,7 @@ export default function ProgramInOstrava() {
   return (
     <>
       <Container>
-        <H2Color>DUCHOVNÍ PROGRAM V OSTRAVĚ</H2Color>
+        <H2Color>DUCHOVNÍ ŽIVOT V OSTRAVĚ</H2Color>
         {isDesktopOrLaptop ? showDesktop() : showMobile()}
       </Container>
       <Footer />

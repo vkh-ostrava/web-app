@@ -1,5 +1,7 @@
 import React from 'react'
 import { useMediaQuery } from 'react-responsive'
+import { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
 
 import NormalOctogen from '../components/NormalOctagon'
 import ParallaxOctagon from '../components/ParallaxOctagon'
@@ -13,6 +15,8 @@ export default function Quotes() {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-device-width: 1224px)',
   })
+
+  const themeContext = useContext(ThemeContext)
 
   return (
     <div id="quotes" style={{ margin: '0 auto' }}>
@@ -261,7 +265,11 @@ export default function Quotes() {
         <>
           <Container>
             <img
-              src="/images/quotes/mobile.png"
+              src={
+                themeContext.theme === 'light'
+                  ? '/images/quotes/mobile.png'
+                  : '/images/quotes/mobile-dark.png'
+              }
               alt="quotes VKH"
               width="100%"
             />
