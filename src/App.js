@@ -49,36 +49,41 @@ function App() {
       setSun(result.data.results)
     }
 
-    fetchData()
     fetchSun()
+    fetchData()
   }, [])
 
+  const parseDate = (now, date, plus12) => {
+    const x = date.slice(0, -3).split(':')
+    const parsed = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      x[0],
+      x[1],
+      x[2]
+    )
+    const add12 = plus12 ? 720 : 0
+    parsed.setMinutes(parsed.getMinutes() - now.getTimezoneOffset() + add12)
+    return (
+      parsed.getHours() * 60 +
+      parsed.getMinutes() -
+      (now.getHours() * 60 + now.getMinutes())
+    )
+  }
   useEffect(() => {
     const now = new Date()
+    if (sun.sunset) {
+      const timeToSunset = parseDate(now, sun.sunset, true)
+      const timeToSunrise = parseDate(now, sun.sunrise, false)
 
-    let sunset = new Date(
-      `${now.getFullYear()}-${now.getMonth()}-${now.getDate()} ${sun.sunset}`
-    )
-    let sunrise = new Date(
-      `${now.getFullYear()}-${now.getMonth()}-${now.getDate()} ${sun.sunrise}`
-    )
-    sunset.setMinutes(sunset.getMinutes() - now.getTimezoneOffset())
-    sunrise.setMinutes(sunset.getMinutes() - now.getTimezoneOffset())
-    //now.setMinutes(now.getMinutes() + 600)
-    const timeToSunset =
-      sunset.getHours() * 60 +
-      sunset.getMinutes() -
-      (now.getHours() * 60 + now.getMinutes())
-    const timeToSunrise =
-      sunrise.getHours() * 60 +
-      sunrise.getMinutes() -
-      (now.getHours() * 60 + now.getMinutes())
-    if (timeToSunrise > 0) {
-      setTheme({ theme: 'dark' })
-    } else if (timeToSunrise < 0 && timeToSunset > 0) {
-      setTheme({ theme: 'light' })
-    } else {
-      setTheme({ theme: 'dark' })
+      if (timeToSunrise > 0) {
+        setTheme({ theme: 'dark' })
+      } else if (timeToSunrise < 0 && timeToSunset > 0) {
+        setTheme({ theme: 'light' })
+      } else {
+        setTheme({ theme: 'dark' })
+      }
     }
   }, [sun])
 
