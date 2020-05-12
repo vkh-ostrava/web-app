@@ -1,7 +1,14 @@
 import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 
-import { Container, Paragraph, H2, Column, Row, H3 } from '../../styles/style'
+import {
+  Container,
+  Paragraph,
+  H2Color,
+  Column,
+  Row,
+  H3,
+} from '../../styles/style'
 import { Link } from './styles'
 import Footer from '../../sections/Footer'
 const vkhs = [
@@ -73,7 +80,7 @@ const VkhCr = () => {
   return (
     <div style={bg}>
       <Container>
-        <H2>VKH V ČR</H2>
+        <H2Color>VKH V ČR</H2Color>
         <Paragraph mobile={!isDesktopOrLaptop}>
           VKH Ostrava je členem organizace{' '}
           <Link

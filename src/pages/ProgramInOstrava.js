@@ -2,7 +2,7 @@ import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import {
-  H2,
+  H2Color,
   Container,
   H3,
   Row,
@@ -97,7 +97,7 @@ export default function ProgramInOstrava() {
   return (
     <>
       <Container>
-        <H2>DUCHOVNÍ PROGRAM V OSTRAVĚ</H2>
+        <H2Color>DUCHOVNÍ PROGRAM V OSTRAVĚ</H2Color>
         {isDesktopOrLaptop ? showDesktop() : showMobile()}
       </Container>
       <Footer />

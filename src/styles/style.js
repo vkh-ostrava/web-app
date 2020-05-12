@@ -33,6 +33,13 @@ export const H2 = styled.h2`
   }
 `
 
+export const H2Color = styled(H2)`
+  background-image: url('/images/bg/bg10.png');
+  background-size: contain;
+  background-position: 750px bottom;
+  background-repeat: no-repeat;
+`
+
 export const H3 = styled.h3`
   font-family: 'Bebas Neue';
   font-size: 3.5rem;
@@ -41,7 +48,8 @@ export const H3 = styled.h3`
   font-style: normal;
   font-weight: normal;
   text-transform: uppercase;
-  color: ${colors.DARK_GREEN};
+  color: ${props =>
+    props.theme.theme === 'light' ? colors.DARK_GREEN : colors.LIGHT_GREEN};
 `
 
 export const Behind = styled.div`

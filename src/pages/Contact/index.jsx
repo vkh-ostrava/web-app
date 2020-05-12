@@ -8,7 +8,7 @@ import {
 } from 'react-google-maps'
 import { useMediaQuery } from 'react-responsive'
 
-import { Container, Paragraph, H2, Column, Row } from '../../styles/style'
+import { Container, Paragraph, H2Color, Column, Row } from '../../styles/style'
 import Footer from '../../sections/Footer'
 
 const MyMapComponent = compose(
@@ -42,7 +42,7 @@ const Contact = () => {
   return (
     <>
       <Container>
-        <H2>KONTAKT</H2>
+        <H2Color>KONTAKT</H2Color>
         <Paragraph mobile={!isDesktopOrLaptop}>
           <b>Email:</b>{' '}
           <a href="mailto:predseda@vkhostrava.cz">predseda@vkhostrava.cz</a>

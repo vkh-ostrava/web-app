@@ -40,7 +40,16 @@ export default function FirstSection() {
             <OctagonRight background={colors.RED} />
           </Parallax>
         )}
-        {isDesktopOrLaptop && <OctagonRight background={colors.LIGHT_GREEN} />}
+        {isDesktopOrLaptop && (
+          <img
+            src="images/vkh-first-section.png"
+            alt="visual"
+            style={{
+              zIndex: 4,
+              textAlign: 'left',
+            }}
+          />
+        )}
       </div>
       {isDesktopOrLaptop && <SVGOne />}
     </>

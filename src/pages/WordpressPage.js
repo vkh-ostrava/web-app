@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { H2, Container } from '../styles/style'
+import { H2Color, Container } from '../styles/style'
 import { Wrapper } from './WordpressPage.styled'
 import Footer from '../sections/Footer'
 
@@ -22,7 +22,7 @@ export default function WordpressPage(props) {
   return (
     <>
       <Container style={{ marginBottom: '200px' }}>
-        <H2>{title}</H2>
+        <H2Color>{title}</H2Color>
         {pagePost === {} ? (
           'Loading'
         ) : (

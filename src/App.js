@@ -79,10 +79,13 @@ function App() {
 
       if (timeToSunrise > 0) {
         setTheme({ theme: 'dark' })
+        document.body.style.backgroundColor = '#e8e8e8'
       } else if (timeToSunrise < 0 && timeToSunset > 0) {
         setTheme({ theme: 'light' })
+        document.body.style.backgroundColor = 'white'
       } else {
         setTheme({ theme: 'dark' })
+        document.body.style.backgroundColor = '#e8e8e8'
       }
     }
   }, [sun])
