@@ -69,7 +69,9 @@ export default function Instagram() {
         {photos.map(photo => {
           return (
             <Cell key={photo.url}>
-              <Image src={photo.displayUrl} />
+              <a href={photo.url} target="_blank" rel="noopener noreferrer">
+                <Image src={photo.displayUrl} />
+              </a>
             </Cell>
           )
         })}
