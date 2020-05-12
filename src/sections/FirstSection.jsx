@@ -1,6 +1,9 @@
 import React from 'react'
 import Parallax from 'react-rellax'
 import { useMediaQuery } from 'react-responsive'
+import { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+
 import { H2, H3, Container } from '../styles/style'
 
 import OctagonRight from '../components/OctagonRight'
@@ -11,6 +14,7 @@ export default function FirstSection() {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-device-width: 1224px)',
   })
+  const themeContext = useContext(ThemeContext)
 
   const speed = isDesktopOrLaptop ? 2 : 0
   const logoWidth = isDesktopOrLaptop ? '600px' : '100%'
@@ -29,7 +33,15 @@ export default function FirstSection() {
             }}
           >
             <Parallax speed={speed}>
-              <img src="logoVKH.png" width={logoWidth} alt="Logo VKH" />
+              <img
+                src={
+                  themeContext.theme === 'light'
+                    ? 'logoVKH.png'
+                    : 'logoVKH-dark.png'
+                }
+                width={logoWidth}
+                alt="Logo VKH"
+              />
               <H2>VKH OSTRAVA</H2>
               <H3>Vytěž ze sebe to nejlepší!</H3>
             </Parallax>

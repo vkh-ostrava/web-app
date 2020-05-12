@@ -43,7 +43,7 @@ export const H2Color = styled(H2)`
 export const H3 = styled.h3`
   font-family: 'Bebas Neue';
   font-size: 3.5rem;
-  line-height: 3rem;
+  line-height: 3.5rem;
   margin: 0rem;
   font-style: normal;
   font-weight: normal;
