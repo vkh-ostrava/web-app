@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
+import ReactGA from 'react-ga'
 
 import { Navbar } from './components/NavBar/Navbar'
 
@@ -16,6 +17,9 @@ import './App.css'
 import { StyledApp } from './styles/style'
 
 function App() {
+  ReactGA.initialize('UA-158646674-1')
+  ReactGA.pageview(window.location.pathname + window.location.search)
+
   const [menu, setMenu] = useState([])
   const [sun, setSun] = useState({})
   const [theme, setTheme] = useState({ theme: 'light' })
