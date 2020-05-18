@@ -89,6 +89,7 @@ export default function Instagram() {
     centerPadding: '60px',
     autoplay: true,
     autoplaySpeed: 2000,
+    focusOnSelect: false,
     swipe: true,
     responsive: [
       {

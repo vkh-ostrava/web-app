@@ -4,17 +4,13 @@ import axios from 'axios'
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
-import Footer from './sections/Footer'
-import FirstSection from './sections/FirstSection'
-import About from './sections/About'
-import Quotes from './sections/Quotes'
-import Instagram from './components/Instagram/Instagram'
-import WordpressPage from './pages/WordpressPage'
 import { Navbar } from './components/NavBar/Navbar'
-import { Calendar } from './components/Calendar'
+
+import WordpressPage from './pages/WordpressPage'
 import ProgramInOstrava from './pages/ProgramInOstrava'
 import Contact from './pages/Contact'
 import VkhCr from './pages/VKHCR'
+import Main from './pages/Main'
 
 import './App.css'
 import { StyledApp } from './styles/style'
@@ -111,12 +107,7 @@ function App() {
             </Route>
           ))}
           <Route path="/">
-            <FirstSection />
-            <About />
-            <Quotes />
-            <Calendar />
-            <Instagram />
-            <Footer />
+            <Main />
           </Route>
         </Switch>
       </StyledApp>

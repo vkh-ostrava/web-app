@@ -30,7 +30,7 @@ export function Calendar() {
   }, [])
 
   return (
-    <div style={{ paddingTop: paddingTop }}>
+    <div style={{ paddingTop: paddingTop, zIndex: 10, position: 'relative' }}>
       <H2>UDÁLOSTI</H2>
       <Container>
         <Row style={{ paddingBottom: '20px' }}>
