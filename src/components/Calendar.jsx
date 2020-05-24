@@ -23,6 +23,8 @@ export function Calendar() {
         'https://www.googleapis.com/calendar/v3/calendars/vkhostrava.cz_o4gjrck3s2cnq03guci1hlb06c@group.calendar.google.com/events?orderBy=startTime&key=AIzaSyDFRf-VTqYLCelf41yNzmkb-ZlRg-8gKP0&singleEvents=true&timeMin=' +
           new Date().toISOString()
       )
+      if (result.data.items && result.data.items.length >= 3)
+        result.data.items.length = 3
       setData(result.data)
     }
 
