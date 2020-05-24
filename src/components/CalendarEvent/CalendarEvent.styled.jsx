@@ -37,11 +37,17 @@ export const TextContainer = styled.div`
     props.mobile ? 'column' : props.reverse ? 'row-reverse' : 'row'};
   width: 400px;
   max-height: 250px;
-  padding: 20px;
+  padding: ${props => {
+    if (props.mobile) return props.reverse ? '20px' : '20px 5px 20px 40px'
+    return props.reverse ? '20px 20px 20px 5px' : '20px 5px 20px 40px'
+  }};
   margin: 0px 0px 0px -19px;
   margin: ${props => (props.reverse ? '0 -39px 0 39px' : '')};
   background-color: ${props => props.color};
-  border-radius: ${props => (props.reverse ? '5px 0 0 5px' : '0 5px 5px 0')};
+  border-radius: ${props => {
+    if (props.mobile) return '5px'
+    return props.reverse ? '5px 0 0 5px' : '0 5px 5px 0'
+  }};
 `
 
 export const SocialContainer = styled.div`
@@ -49,6 +55,7 @@ export const SocialContainer = styled.div`
   margin: ${props =>
     props.mobile ? '0 0 0 0' : props.reverse ? '0 auto 0 0 ' : '0 0 0 auto'};
   width: 40px;
+  padding: 0 10px;
   display: flex;
   flex-direction: ${props => (props.mobile ? 'row' : 'column')};
 

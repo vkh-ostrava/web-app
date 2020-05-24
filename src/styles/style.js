@@ -166,7 +166,7 @@ export const Blockquote = styled.blockquote`
   width: 480px;
   text-align: center;
   position: relative;
-
+  font-style: italic;
   font-family: Montserrat;
   font-size: 35px;
   line-height: 34px;
