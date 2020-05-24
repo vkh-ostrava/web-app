@@ -42,7 +42,10 @@ export const TextContainer = styled.div`
     return props.reverse ? '20px 20px 20px 5px' : '20px 5px 20px 40px'
   }};
   margin: 0px 0px 0px -19px;
-  margin: ${props => (props.reverse ? '0 -39px 0 39px' : '')};
+  margin: ${props => {
+    if (props.mobile) return props.reverse ? '0 -39px 0 0' : ''
+    return props.reverse ? '0 -39px 0 39px' : ''
+  }};
   background-color: ${props => props.color};
   border-radius: ${props => {
     if (props.mobile) return '5px'
