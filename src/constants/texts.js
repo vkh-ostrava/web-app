@@ -21,8 +21,8 @@ export default {
     color: COLORS.EVENTS.TALK,
   },
   quotes: [
-    'VKH je pro mě společenství mladých věřících studentů, mezi kterými se cítím přijatý',
-    'Do VéKaHáčka chodím, protože chci vytěžit se zese to nejlepší jak při darování krve, tak ve schole',
-    'Mše, modlitba, kamarádi, akce, zajímavé přednášky, "pivo" po programu to je pro me VKH',
+    'VKH je pro mě společenství mladých věřících studentů, mezi kterými se cítím přijatý.',
+    'Do VéKaHáčka chodím, protože chci vytěžit ze sebe to nejlepší jak při darování krve, tak ve schole.',
+    'Mše, modlitba, kamarádi, akce, zajímavé přednášky, "pivo" po programu to je pro me VKH.',
   ],
 }
