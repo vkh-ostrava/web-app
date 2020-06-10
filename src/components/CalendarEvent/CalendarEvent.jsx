@@ -24,6 +24,7 @@ export function CalendarEvent(props) {
       ''
     )
     event.description = event.description.replace(/<\/?[^>]+(>|$)/g, '')
+    event.description = `${event.description.slice(0, 300)}...`
   }
   let color = colors.EVENTS.FUN
 
