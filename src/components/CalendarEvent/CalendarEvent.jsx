@@ -14,6 +14,11 @@ import { CalendarIcon } from '../icons/CalendarIcon'
 import { FacebookIcon } from '../icons/FacebookIcon'
 
 export function CalendarEvent(props) {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-device-width: 1224px)',
+  })
+
+  const SLICE_CONST = isDesktopOrLaptop ? 200 : 200
   const event = props.event
   if (event.description) {
     event.fb = event.description.match(
@@ -25,8 +30,8 @@ export function CalendarEvent(props) {
     )
     event.description = event.description.replace(/<\/?[^>]+(>|$)/g, '')
     event.description =
-      event.description.length > 200
-        ? `${event.description.slice(0, 200)}...`
+      event.description.length > SLICE_CONST
+        ? `${event.description.slice(0, SLICE_CONST)}...`
         : event.description
   }
   let color = colors.EVENTS.FUN
@@ -68,9 +73,6 @@ export function CalendarEvent(props) {
   } else {
     color = colors.EVENTS.FUN
   }
-  const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 1224px)',
-  })
 
   const octagonRatio = isDesktopOrLaptop ? 1.2 : 0.5
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 
 import FirstSection from '../../sections/FirstSection'
 import About from '../../sections/About'
@@ -14,7 +14,9 @@ const Main = () => {
       <About />
       <Quotes />
       <Calendar />
-      <Instagram />
+      <Suspense fallback={<p>Loading instagram</p>}>
+        <Instagram />
+      </Suspense>
       <Footer />
     </>
   )

@@ -36,7 +36,7 @@ export const TextContainer = styled.div`
   flex-direction: ${props =>
     props.mobile ? 'column' : props.reverse ? 'row-reverse' : 'row'};
   width: 400px;
-  max-height: 250px;
+  height: auto;
   padding: ${props => {
     if (props.mobile) return props.reverse ? '20px' : '20px 5px 20px 40px'
     return props.reverse ? '20px 20px 20px 5px' : '20px 5px 20px 40px'

@@ -104,9 +104,8 @@ const Contact = () => {
           <br />
           VKH Ostrava se schází v kostele sv. Cyrila a Metoděje v Pustkovci
           Pustkovecká 350/32b, 708 00 Ostrava
+          <br />
         </Paragraph>
-
-        <img src="images/bg/contact.svg" width={bg} alt="Ilustration" />
       </Container>
       <MyMapComponent isMarkerShown />
       <Footer />
